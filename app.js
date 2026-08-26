@@ -136,5 +136,5 @@ function bindQuickCities() {
 
 document.addEventListener('click', event => { if (!event.target.closest('.search-wrap')) suggestions.hidden = true; });
 document.querySelectorAll('.langs button').forEach(button => button.onclick = () => applyLanguage(button.dataset.lang));
-applyLanguage('vi');
+applyLanguage('en');
 render({ displayName: 'TP. Hồ Chí Minh', timezone: 'Asia/Ho_Chi_Minh' });
