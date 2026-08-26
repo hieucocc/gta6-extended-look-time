@@ -39,3 +39,11 @@ label{color:#c8c5d2}.input-row{border:0;border-radius:14px;background:#20213a;bo
 .cards{gap:20px}.watch-card{min-height:255px;padding:25px 27px;border:0;border-radius:18px;box-shadow:none}.netflix{background:#2c2d50;color:#f4efff}.youtube{background:#252642;color:#f4efff}.card-brand{color:#f2effc}.brand-mark{background:#ff4064}.badge{border-color:rgba(255,255,255,.5);color:#f7f3ff}.free{color:#ff9fba}.date,.youtube .date{color:#bbb8cf}.time{color:#fff;font-size:clamp(66px,7vw,92px)}.label{color:#aaa7bb}.card-note,.youtube .card-note{color:#bab6cb}.watch-card:after{opacity:.05}.difference{color:#aaa7bb}.difference>span:first-child{color:#ff9fba}.difference strong{color:#f7f4ff}
 footer{color:#77758a;border-color:rgba(255,255,255,.1)}footer a{color:#bcb9c8}.credit strong{color:#ff9fba}
 @media(max-width:620px){.page-shell{width:min(100% - 28px,1120px)}.cards{gap:10px}.watch-card{min-height:190px;padding:17px;border-radius:14px}.time{font-size:48px}}
+
+/* Official GTA VI type family, served from Rockstar's public VI page. */
+@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Regular-s.p.0imfurdf3f-dg.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Medium-s.p.0doalxf~3yos..woff') format('woff');font-weight:500;font-display:swap}
+@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Bold-s.p.0yn5.wm39fg.l.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:'GTA Art Deco Condensed';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_CondensedHeavy-s.p.0ggau.atpfhca.woff') format('woff');font-weight:900;font-display:swap}
+body,button,input,label,.topline,.eyebrow,.timezone,.date,.label,.difference,footer,.badge,.card-brand,.suggestion{font-family:'GTA Art Deco',Arial,sans-serif!important}
+h1{font-family:'GTA Art Deco Condensed','GTA Art Deco',Arial,sans-serif!important;font-weight:900}
