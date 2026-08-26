@@ -111,7 +111,7 @@ async function searchPlaces(query) {
   if (query.length < 2) { suggestions.hidden = true; return; }
   status.textContent = t('searching');
   try {
-    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=8&language=${currentLang}&format=json`;
+    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=50&language=${currentLang}&format=json`;
     const response = await fetch(url);
     if (!response.ok) throw new Error('Search failed');
     const data = await response.json();
