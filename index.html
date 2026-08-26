@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA VI — An Extended Look</title>
+  <meta name="description" content="Find your local time for the GTA VI Extended Look on Netflix and YouTube." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topline"><span class="live-dot"></span><span data-i18n="topline">GLOBAL PREMIERE TIMES</span><div class="langs"><button data-lang="en">EN</button><button data-lang="fr">FR</button><button class="active" data-lang="vi">VI</button></div></header>
+    <section class="hero">
+      <div class="sunset-stamp">VICE CITY<br><span>2026</span></div>
+      <p class="eyebrow">GRAND THEFT AUTO VI</p>
+      <h1>An Extended <em>Look</em></h1>
+      <p class="intro" data-i18n="intro">Bạn sẽ xem lúc mấy giờ? Nhập tên thành phố để đổi giờ phát sóng sang giờ địa phương.</p>
+      <div class="search-wrap">
+        <label for="cityInput" data-i18n="cityLabel">THÀNH PHỐ CỦA BẠN</label>
+        <div class="input-row"><span class="search-icon">⌕</span><input id="cityInput" type="text" data-i18n-placeholder="placeholder" placeholder="Ví dụ: Ho Chi Minh City, Tokyo, London…" autocomplete="off" /><button id="clearBtn" class="clear-btn" aria-label="Clear">×</button></div>
+        <div id="suggestions" class="suggestions" hidden></div>
+        <p id="searchStatus" class="hint"></p>
+      </div>
+    </section>
+    <section id="result" class="result" aria-live="polite">
+      <div class="result-heading"><div><span class="pin">⌖</span><span id="cityName">TP. Hồ Chí Minh</span></div><span id="timezoneName" class="timezone">GMT+07:00</span></div>
+      <div class="cards">
+        <article class="watch-card netflix"><div class="card-brand"><span class="brand-mark">N</span> NETFLIX <span class="badge" data-i18n="earlier">EARLIER</span></div><div class="date" id="netflixDate"></div><div class="time" id="netflixTime"></div><div class="label" data-i18n="localTime">LOCAL TIME</div><p class="card-note" data-i18n="premiere">The first premiere</p></article>
+        <article class="watch-card youtube"><div class="card-brand"><span class="play-mark">▶</span> YOUTUBE <span class="badge free" data-i18n="free">FREE</span></div><div class="date" id="youtubeDate"></div><div class="time" id="youtubeTime"></div><div class="label" data-i18n="localTime">LOCAL TIME</div><p class="card-note" data-i18n="rockstarChannel">On Rockstar Games channel</p></article>
+      </div>
+      <div class="difference"><span>↳</span><span data-i18n="difference">YouTube goes live after Netflix</span> <strong>6 <span data-i18n="hours">hours</span></strong> · <span data-i18n="sameContent">same content</span></div>
+    </section>
+    <footer><span data-i18n="converted">Converted from ET (UTC−4)</span><span class="credit">made by <strong>@hieucocc</strong></span><a href="https://www.rockstargames.com/newswire/article/9k2kaa1o3297k9/grand-theft-auto-vi-an-extended-look" target="_blank" rel="noreferrer" data-i18n="source">Source: Rockstar Games ↗</a></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
