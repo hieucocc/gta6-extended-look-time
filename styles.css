@@ -57,3 +57,6 @@ h1{font-family:'ArtDecoCondensedHeavy','ArtDecoRegular',Arial,sans-serif!importa
 .watch-card:after{display:none!important}
 .input-row input{font-size:18px;padding:17px 0}.hint{font-size:13px;min-height:0}.result-heading{font-size:16px}.timezone{font-size:12px}.card-brand{font-size:13px}.date{font-size:12px}.label{font-size:11px}.card-note{font-size:13px}.difference{font-size:12px}footer{font-size:10px}
 .hint:empty{display:none}
+.countdown{display:flex;align-items:center;justify-content:center;gap:18px;margin:13px auto 0;color:#aaa7b8;font:12px 'ArtDecoMedium',Arial,sans-serif;letter-spacing:.12em}.countdown strong{color:#fff;font:400 clamp(22px,3vw,32px) 'ArtDecoCondensedHeavy','ArtDecoRegular',Arial,sans-serif;letter-spacing:.04em}.countdown:before,.countdown:after{content:'';height:1px;width:clamp(30px,10vw,120px);background:rgba(255,255,255,.14)}
+.watch-card{min-height:240px}footer{margin-top:0}
+@media(max-width:620px){.watch-card{min-height:190px}footer{margin-top:22px}.countdown{gap:9px;font-size:10px}.countdown strong{font-size:22px}}
