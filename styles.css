@@ -40,6 +40,11 @@ label{color:#c8c5d2}.input-row{border:0;border-radius:14px;background:#20213a;bo
 footer{color:#77758a;border-color:rgba(255,255,255,.1)}footer a{color:#bcb9c8}.credit strong{color:#ff9fba}
 @media(max-width:620px){.page-shell{width:min(100% - 28px,1120px)}.cards{gap:10px}.watch-card{min-height:190px;padding:17px;border-radius:14px}.time{font-size:48px}}
 
+/* Artwork-wallpapers-inspired background collage. */
+body{background:#0e1020}
+body:before{inset:-4%;z-index:0;opacity:.5;background-image:url('https://www.rockstargames.com/VI/_next/static/media/Jason_and_Lucia_Robbery_landscape.09c8a~do21h4p.jpg'),url('https://www.rockstargames.com/VI/_next/static/media/Cal_Hampton_landscape.17k7bnt3myg.2.jpg'),url('https://www.rockstargames.com/VI/_next/static/media/Vice_City_Postcard_landscape.0v2njmlk2n-qm.jpg');background-repeat:no-repeat;background-size:52% 62%,38% 47%,43% 50%;background-position:left top,right top,center bottom;filter:saturate(.9) contrast(.92);mix-blend-mode:screen}
+body:after{display:block;z-index:0;inset:0;left:0;right:0;bottom:auto;height:100%;transform:none;opacity:1;background:linear-gradient(180deg,rgba(10,11,25,.7) 0%,rgba(10,11,25,.8) 45%,rgba(10,11,25,.96) 100%)}
+
 /* Official GTA VI type family, served from Rockstar's public VI page. */
 @font-face{font-family:'ArtDecoRegular';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Regular-s.p.0imfurdf3f-dg.woff') format('woff');font-display:swap}
 @font-face{font-family:'ArtDecoMedium';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Medium-s.p.0doalxf~3yos..woff') format('woff');font-display:swap}
