@@ -26,6 +26,8 @@ let fmtTime = new Intl.DateTimeFormat('vi-VN', { hour: '2-digit', minute: '2-dig
 let fmtDate = new Intl.DateTimeFormat('vi-VN', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 let searchTimer;
 let requestId = 0;
+let currentResults = [];
+let activeIndex = -1;
 
 function t(key) { return translations[currentLang][key]; }
 
@@ -91,6 +93,8 @@ function placeFromApi(result) {
 }
 
 function showResults(results) {
+  currentResults = results;
+  activeIndex = -1;
   suggestions.innerHTML = results.map((place, index) => `
     <button class="suggestion" data-index="${index}">
       <strong>${place.name}</strong><span> · ${place.admin1 || place.country}</span>
@@ -106,15 +110,38 @@ function showResults(results) {
   });
 }
 
+function setActiveSuggestion(index) {
+  if (!currentResults.length) return;
+  activeIndex = (index + currentResults.length) % currentResults.length;
+  suggestions.querySelectorAll('.suggestion').forEach((button, i) => button.classList.toggle('is-active', i === activeIndex));
+  suggestions.querySelector(`[data-index="${activeIndex}"]`)?.scrollIntoView({ block: 'nearest' });
+}
+
+function searchVariants(query) {
+  const normalized = query.replace(/\s+/g, ' ').trim();
+  const variants = [normalized];
+  const words = normalized.split(' ');
+  // Geocoding is more accurate with a comma between the place and its region/country.
+  for (let split = words.length - 1; split > 0 && variants.length < 5; split--) {
+    const variant = `${words.slice(0, split).join(' ')}, ${words.slice(split).join(' ')}`;
+    if (!variants.includes(variant)) variants.push(variant);
+  }
+  return variants;
+}
+
 async function searchPlaces(query) {
   const currentRequest = ++requestId;
   if (query.length < 2) { suggestions.hidden = true; return; }
   status.textContent = t('searching');
   try {
-    const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=50&language=${currentLang}&format=json`;
-    const response = await fetch(url);
-    if (!response.ok) throw new Error('Search failed');
-    const data = await response.json();
+    let data = { results: [] };
+    for (const variant of searchVariants(query)) {
+      const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(variant)}&count=50&language=${currentLang}&format=json`;
+      const response = await fetch(url);
+      if (!response.ok) continue;
+      data = await response.json();
+      if (data.results?.length) break;
+    }
     if (currentRequest !== requestId) return;
     showResults(data.results || []);
     status.textContent = data.results?.length ? t('choose') : t('empty');
@@ -129,6 +156,20 @@ input.addEventListener('input', () => {
   clearBtn.style.display = input.value ? 'block' : 'none';
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => searchPlaces(input.value.trim()), 280);
+});
+
+input.addEventListener('keydown', event => {
+  if (event.key === 'ArrowDown') { event.preventDefault(); setActiveSuggestion(activeIndex + 1); }
+  if (event.key === 'ArrowUp') { event.preventDefault(); setActiveSuggestion(activeIndex - 1); }
+  if (event.key === 'Enter' && activeIndex >= 0 && currentResults[activeIndex]) {
+    event.preventDefault();
+    const place = placeFromApi(currentResults[activeIndex]);
+    input.value = place.displayName;
+    suggestions.hidden = true;
+    clearBtn.style.display = 'block';
+    render(place);
+  }
+  if (event.key === 'Escape') suggestions.hidden = true;
 });
 
 clearBtn.onclick = () => {
