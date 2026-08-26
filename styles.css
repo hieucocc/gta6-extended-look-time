@@ -41,9 +41,13 @@ footer{color:#77758a;border-color:rgba(255,255,255,.1)}footer a{color:#bcb9c8}.c
 @media(max-width:620px){.page-shell{width:min(100% - 28px,1120px)}.cards{gap:10px}.watch-card{min-height:190px;padding:17px;border-radius:14px}.time{font-size:48px}}
 
 /* Official GTA VI type family, served from Rockstar's public VI page. */
-@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Regular-s.p.0imfurdf3f-dg.woff') format('woff');font-weight:400;font-display:swap}
-@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Medium-s.p.0doalxf~3yos..woff') format('woff');font-weight:500;font-display:swap}
-@font-face{font-family:'GTA Art Deco';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Bold-s.p.0yn5.wm39fg.l.woff') format('woff');font-weight:700;font-display:swap}
-@font-face{font-family:'GTA Art Deco Condensed';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_CondensedHeavy-s.p.0ggau.atpfhca.woff') format('woff');font-weight:900;font-display:swap}
-body,button,input,label,.topline,.eyebrow,.timezone,.date,.label,.difference,footer,.badge,.card-brand,.suggestion{font-family:'GTA Art Deco',Arial,sans-serif!important}
-h1{font-family:'GTA Art Deco Condensed','GTA Art Deco',Arial,sans-serif!important;font-weight:900}
+@font-face{font-family:'ArtDecoRegular';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Regular-s.p.0imfurdf3f-dg.woff') format('woff');font-display:swap}
+@font-face{font-family:'ArtDecoMedium';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Medium-s.p.0doalxf~3yos..woff') format('woff');font-display:swap}
+@font-face{font-family:'ArtDecoBold';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_Bold-s.p.0yn5.wm39fg.l.woff') format('woff');font-display:swap}
+@font-face{font-family:'ArtDecoCondensedHeavy';src:url('https://www.rockstargames.com/VI/_next/static/media/GTAArtDeco_CondensedHeavy-s.p.0ggau.atpfhca.woff') format('woff');font-display:swap}
+body,input,.suggestion{font-family:'ArtDecoRegular',Arial,sans-serif!important}
+button,label,.topline,.eyebrow,.timezone,.date,.label,.difference,footer,.badge,.card-brand{font-family:'ArtDecoMedium',Arial,sans-serif!important}
+.langs button{font-family:'ArtDecoBold',Arial,sans-serif!important}
+h1{font-family:'ArtDecoCondensedHeavy','ArtDecoRegular',Arial,sans-serif!important;font-weight:400}
+.input-row{border-radius:20px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.watch-card:after{display:none}
