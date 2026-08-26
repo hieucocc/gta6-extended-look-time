@@ -28,8 +28,7 @@ let requestId = 0;
 function t(key) { return translations[currentLang][key]; }
 
 function setQuickStatus() {
-  status.innerHTML = `${t('quick')} <button class="quick-city" data-city="Ho Chi Minh City">${currentLang === 'vi' ? 'TP. Hồ Chí Minh' : 'Ho Chi Minh City'}</button><button class="quick-city" data-city="Hanoi">${currentLang === 'vi' ? 'Hà Nội' : 'Hanoi'}</button><button class="quick-city" data-city="Tokyo">Tokyo</button><button class="quick-city" data-city="Los Angeles">Los Angeles</button>`;
-  bindQuickCities();
+  status.textContent = '';
 }
 
 function applyLanguage(lang) {

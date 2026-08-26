@@ -49,5 +49,7 @@ body,input,.suggestion{font-family:'ArtDecoRegular',Arial,sans-serif!important}
 button,label,.topline,.eyebrow,.timezone,.date,.label,.difference,footer,.badge,.card-brand{font-family:'ArtDecoMedium',Arial,sans-serif!important}
 .langs button{font-family:'ArtDecoBold',Arial,sans-serif!important}
 h1{font-family:'ArtDecoCondensedHeavy','ArtDecoRegular',Arial,sans-serif!important;font-weight:400}
-.input-row{border-radius:20px;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
-.watch-card:after{display:none}
+.input-row{border-radius:20px;box-shadow:0 0 0 1px rgba(255,255,255,.08)!important}
+.watch-card:after{display:none!important}
+.input-row input{font-size:18px;padding:17px 0}.hint{font-size:13px;min-height:0}.result-heading{font-size:16px}.timezone{font-size:12px}.card-brand{font-size:13px}.date{font-size:12px}.label{font-size:11px}.card-note{font-size:13px}.difference{font-size:12px}footer{font-size:10px}
+.hint:empty{display:none}
